@@ -21,13 +21,13 @@ const Categories = () => {
   const { data: fightGames } = useGetFightGamesQuery()
   const { data: simulationGames } = useGetSimulationGamesQuery()
   const { data: rpgGames } = useGetRpgGamesQuery()
-  const { data: SportGames } = useGetSportGamesQuery()
+  const { data: sportGames } = useGetSportGamesQuery()
 
-  if (actionGames && fightGames && rpgGames && SportGames && simulationGames) {
+  if (actionGames && fightGames && rpgGames && sportGames && simulationGames) {
     return (
       <>
         <ProductsList games={actionGames} title="Ação" background="grey" />
-        <ProductsList games={SportGames} title="Esportes" background="black" />
+        <ProductsList games={sportGames} title="Esportes" background="black" />
         <ProductsList
           games={simulationGames}
           title="Simulação"
