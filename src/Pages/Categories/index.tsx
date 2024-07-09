@@ -1,12 +1,4 @@
-import { useEffect, useState } from 'react'
-
 import ProductsList from '../../components/ProductsList'
-
-import resident from '../../assets/images/resident.png'
-import diablo from '../../assets/images/diablo.png'
-import zelda from '../../assets/images/zelda.png'
-import starWars from '../../assets/images/star_wars.png'
-import { Game } from '../Home'
 
 import {
   useGetActionGamesQuery,
@@ -26,15 +18,31 @@ const Categories = () => {
   if (actionGames && fightGames && rpgGames && sportGames && simulationGames) {
     return (
       <>
-        <ProductsList games={actionGames} title="Ação" background="grey" />
-        <ProductsList games={sportGames} title="Esportes" background="black" />
+        <ProductsList
+          games={actionGames}
+          title="Ação"
+          background="grey"
+          id="action"
+        />
+        <ProductsList
+          games={sportGames}
+          title="Esportes"
+          background="black"
+          id="sports"
+        />
         <ProductsList
           games={simulationGames}
           title="Simulação"
           background="grey"
+          id="simulation"
         />
-        <ProductsList games={fightGames} title="Luta" background="black" />
-        <ProductsList games={rpgGames} title="RPG" background="grey" />
+        <ProductsList
+          games={fightGames}
+          title="Luta"
+          background="black"
+          id="fight"
+        />
+        <ProductsList games={rpgGames} title="RPG" background="grey" id="rpg" />
       </>
     )
   }
